@@ -35,7 +35,7 @@ def display_album_data(albums):
 
     for index, album in enumerate(albums):
         draw.text((10, 30 * index), display_formatted_album_information(index, album), font = font24, fill = 0)
-        draw.line((10, 30 * index, 200, 30 * index), fill = 0)
+        draw.line((0, 30 * index, epd.width, 30 * index), fill = 0)
 
 
 
