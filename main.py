@@ -61,10 +61,10 @@ def main():
     # button_pins = [17,27,22,24,25]
 
     buttonOne = Button(6, debounce=0.1, uri=albums[0].uri)
-    # buttonTwo = Button(27, debounce=0.1, uri=albums[1].uri)
-    # buttonThree = Button(22, debounce=0.1, uri=albums[2].uri)
-    # buttonFour = Button(24, debounce=0.1, uri=albums[3].uri)
-    # buttonFive = Button(25, debounce=0.1, uri=albums[4].uri)
+    buttonTwo = Button(27, debounce=0.1, uri=albums[1].uri)
+    buttonThree = Button(22, debounce=0.1, uri=albums[2].uri)
+    buttonFour = Button(24, debounce=0.1, uri=albums[3].uri)
+    buttonFive = Button(25, debounce=0.1, uri=albums[4].uri)
 
     # When we integrate the PI we shouldn't need most of this logic, the loop with wait for input from the buttons and determine the source and match it to the corresponding album.
 
