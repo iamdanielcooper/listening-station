@@ -63,7 +63,7 @@ def display_loading():
     Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(Himage)
 
-    draw.text((10, 30 * index), "Loading...", font = font30, fill = 0, align = "center")
+    draw.text((10, 10), "Loading...", font = font30, fill = 0, align = "center")
 
     epd.display(epd.getbuffer(Himage))
     epd.lut_GC()
