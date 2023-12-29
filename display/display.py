@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 import sys
 import os
-from spotipy_helpers.spotipy_helpers import display_formatted_album_information 
+from spotipy_helpers.spotipy_helpers import *
 picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'assets')
 libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'assets')
 if os.path.exists(libdir):
@@ -63,7 +63,7 @@ def display_loading():
     Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(Himage)
 
-    draw.text((10, 10), "Loading...", font = font30, fill = 0, align = "center")
+    draw.text((10, 10), get_loading_wording(), font = font30, fill = 0, align = "center")
 
     epd.display(epd.getbuffer(Himage))
     epd.lut_GC()
