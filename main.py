@@ -39,10 +39,13 @@ def get_album_details(sp):
 
 def main():
 
-    auth_manager = SpotifyClientCredentials()
+    auth_manager = SpotifyClientCredentials(
+        client_id=os.getenv("SPOTIPY_CLIENT_ID"),
+        client_secret=os.getenv("SPOTIPY_CLIENT_SECRET")
+    )
+    
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
-    
     albums = get_album_details(sp)
     
     # Post MVP, this function should display the data in a couple of different ways in a couple of different places. notably, An e-ink display with the info for what albums are loaded, a higher-res display to show the artwork itself.
