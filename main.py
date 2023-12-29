@@ -66,7 +66,7 @@ def main():
     # When we integrate the PI we shouldn't need most of this logic, the loop with wait for input from the buttons and determine the source and match it to the corresponding album.
 
     while True:
-        
+
         if buttonOne.is_pressed():
             print(buttonOne.BUTTON_PIN)
             print(sp_helpers.get_loading_wording())
@@ -82,12 +82,12 @@ def main():
             print(sp_helpers.get_loading_wording())
             sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), buttonThree.URI)
 
-        elif buttonOne.is_pressed():
+        elif buttonFour.is_pressed():
             print(buttonFour.BUTTON_PIN)
             print(sp_helpers.get_loading_wording())
             sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), buttonFour.URI)
             
-        elif buttonOne.is_pressed():
+        elif buttonFive.is_pressed():
             print(buttonFive.BUTTON_PIN)
             print(sp_helpers.get_loading_wording())
             sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), buttonFive.URI)
