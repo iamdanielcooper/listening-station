@@ -40,6 +40,9 @@ def get_album_details(sp):
     return albums
 
 def main():
+
+    display_loading()
+
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
             client_id=os.getenv("CLIENT_ID"),
             client_secret=os.getenv("CLIENT_SECRET"),

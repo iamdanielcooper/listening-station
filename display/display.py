@@ -68,4 +68,4 @@ def display_loading():
     epd.display(epd.getbuffer(Himage))
     epd.lut_GC()
     epd.refresh()
-    time.sleep(2)
+    time.sleep(20)
