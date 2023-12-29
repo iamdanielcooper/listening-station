@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 from spotipy_helpers import spotipy_helpers as sp_helpers
 from models.Album import Album
+from button import *
 
 load_dotenv()
 
@@ -46,6 +47,8 @@ def main():
             )
         )
     
+    button = Button(25, debounce=0.1)
+    
     albums = get_album_details(sp)
     
     # Post MVP, this function should display the data in a couple of different ways in a couple of different places. notably, An e-ink display with the info for what albums are loaded, a higher-res display to show the artwork itself.
@@ -53,6 +56,8 @@ def main():
 
     # When we integrate the PI we shouldn't need most of this logic, the loop with wait for input from the buttons and determine the source and match it to the corresponding album.
     while True:
+
+        print(button.is_pressed())
 
         # TODO: Stop button
 
