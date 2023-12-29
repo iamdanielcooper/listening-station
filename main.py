@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from spotipy_helpers import spotipy_helpers as sp_helpers
 from models.Album import Album
 from button.button import Button
+from display.display import *
 
 load_dotenv()
 
@@ -52,7 +53,9 @@ def main():
     albums = get_album_details(sp)
     
     # Post MVP, this function should display the data in a couple of different ways in a couple of different places. notably, An e-ink display with the info for what albums are loaded, a higher-res display to show the artwork itself.
-    sp_helpers.display_album_details(albums)
+    # sp_helpers.display_album_details(albums)
+
+    display_album_data(albums)
 
     # For each album, attach it to a button
     button_pins = [17,27,22,24,25]
