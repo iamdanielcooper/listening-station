@@ -35,6 +35,7 @@ def display_album_data(albums):
 
     for index, album in enumerate(albums):
         draw.text((10, 30 * index), display_formatted_album_information(index, album), font = font24, fill = 0)
+        draw.rectangle((10, 30 * index, 10, 10))
 
 
 
