@@ -26,5 +26,3 @@ class Button:
             return True
         return False
         
-
-        
