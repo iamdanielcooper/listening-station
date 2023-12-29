@@ -34,7 +34,7 @@ def display_album_data(albums):
     draw = ImageDraw.Draw(Himage)
 
     for index, album in enumerate(albums):
-        draw.text((10, 30 * index), display_formatted_album_information(index, album), font = font24, fill = 0)
+        draw.text((10, 30 * index), display_formatted_album_information(index, album), font = font24, fill = 0, align = "center")
         draw.line((0, 30 * index, epd.height, 30 * index), fill = 0)
 
 
