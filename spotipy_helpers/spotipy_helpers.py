@@ -11,7 +11,7 @@ def get_playlist_by_name(all_playlists, name):
             return playlist['id'];
 
 def display_formatted_album_information(index, album):
-    return str(index) + ": " + album.artist + " - " + album.name
+    return str(index + 1) + ": " + album.artist + " - " + album.name
 
 def get_loading_wording():
     return random.choice(
