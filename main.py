@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 from spotipy_helpers import spotipy_helpers as sp_helpers
 from models.Album import Album
-from button import *
+from button.button import Button
 
 load_dotenv()
 
