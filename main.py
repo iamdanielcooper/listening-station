@@ -55,23 +55,31 @@ def main():
     sp_helpers.display_album_details(albums)
 
     # When we integrate the PI we shouldn't need most of this logic, the loop with wait for input from the buttons and determine the source and match it to the corresponding album.
+
     while True:
-
-        print(button.is_pressed())
-
-        # TODO: Stop button
-
-        user_input = input("What do you want to hear? (enter the number shown next to the album): ")
-
-        if user_input == 'exit':
-            break;
-        
-        elif 0 <= int(user_input) <= len(albums) -1:
+        if button.is_pressed():
             print(sp_helpers.get_loading_wording())
             sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), albums[int(user_input)].uri)
-
         else:
-            print("Invalid input. Please enter a number as shown above. or enter 'exit' to exit")
+            print("no command from button")
+            
+
+
+    # while True:
+
+    #     # TODO: Stop button
+
+    #     user_input = input("What do you want to hear? (enter the number shown next to the album): ")
+
+    #     if user_input == 'exit':
+    #         break;
+        
+    #     elif 0 <= int(user_input) <= len(albums) -1:
+    #         print(sp_helpers.get_loading_wording())
+    #         sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), albums[int(user_input)].uri)
+
+    #     else:
+    #         print("Invalid input. Please enter a number as shown above. or enter 'exit' to exit")
 
 print("Booting...")
 main()
