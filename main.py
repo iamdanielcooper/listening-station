@@ -54,16 +54,43 @@ def main():
     # Post MVP, this function should display the data in a couple of different ways in a couple of different places. notably, An e-ink display with the info for what albums are loaded, a higher-res display to show the artwork itself.
     sp_helpers.display_album_details(albums)
 
+    # For each album, attach it to a button
+    button_pins = [17,27,22,24,25]
+
+    buttonOne = Button(17, debounce=0.1, uri=albums[0].uri)
+    buttonTwo = Button(27, debounce=0.1, uri=albums[1].uri)
+    buttonThree = Button(22, debounce=0.1, uri=albums[2].uri)
+    buttonFour = Button(24, debounce=0.1, uri=albums[3].uri)
+    buttonFive = Button(25, debounce=0.1, uri=albums[4].uri)
+
     # When we integrate the PI we shouldn't need most of this logic, the loop with wait for input from the buttons and determine the source and match it to the corresponding album.
 
     while True:
-        if button.is_pressed():
-            print(button.BUTTON_PIN)
+        
+        if buttonOne.is_pressed():
+            print(buttonOne.BUTTON_PIN)
             print(sp_helpers.get_loading_wording())
-            sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), albums[0].uri)
+            sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), buttonOne.URI)
 
+        elif buttonTwo.is_pressed():
+            print(buttonTwo.BUTTON_PIN)
+            print(sp_helpers.get_loading_wording())
+            sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), buttonTwo.URI)
+
+        elif buttonThree.is_pressed():
+            print(buttonThree.BUTTON_PIN)
+            print(sp_helpers.get_loading_wording())
+            sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), buttonThree.URI)
+
+        elif buttonOne.is_pressed():
+            print(buttonFour.BUTTON_PIN)
+            print(sp_helpers.get_loading_wording())
+            sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), buttonFour.URI)
             
-
+        elif buttonOne.is_pressed():
+            print(buttonFive.BUTTON_PIN)
+            print(sp_helpers.get_loading_wording())
+            sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), buttonFive.URI)
 
     # while True:
 

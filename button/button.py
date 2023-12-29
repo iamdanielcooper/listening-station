@@ -7,12 +7,14 @@ class Button:
     
     BUTTON_PIN = 0
     DEBOUNCE = 0
+    URI = ""
 	
-    def __init__(self, button_pin, debounce=0.05):
+    def __init__(self, button_pin, debounce=0.05, uri=""):
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
         self.BUTTON_PIN = button_pin
         self.DEBOUNCE = debounce
+        self.URI = uri
 
         GPIO.setup(self.BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
  
