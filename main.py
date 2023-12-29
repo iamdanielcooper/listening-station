@@ -98,21 +98,4 @@ def main():
             print(sp_helpers.get_loading_wording())
             sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), buttonFive.URI)
 
-    # while True:
-
-    #     # TODO: Stop button
-
-    #     user_input = input("What do you want to hear? (enter the number shown next to the album): ")
-
-    #     if user_input == 'exit':
-    #         break;
-        
-    #     elif 0 <= int(user_input) <= len(albums) -1:
-    #         print(sp_helpers.get_loading_wording())
-    #         sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), albums[int(user_input)].uri)
-
-    #     else:
-    #         print("Invalid input. Please enter a number as shown above. or enter 'exit' to exit")
-
-print("Booting...")
 main()
