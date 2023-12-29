@@ -59,7 +59,7 @@ def main():
     while True:
         if button.is_pressed():
             print(sp_helpers.get_loading_wording())
-            sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), albums[int(user_input)].uri)
+            sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), albums[0].uri)
         else:
             print("no command from button")
             
