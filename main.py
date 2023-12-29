@@ -74,9 +74,9 @@ def main():
     while True:
 
         if buttonOne.is_pressed():
-            print(buttonOne.BUTTON_PIN)
-            print(sp_helpers.get_loading_wording())
+            display_loading()
             sp.start_playback(os.getenv("DEFAULT_DEVICE_ID"), buttonOne.URI)
+            display_album_data(albums)
 
         elif buttonTwo.is_pressed():
             print(buttonTwo.BUTTON_PIN)
