@@ -1,5 +1,5 @@
 import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
+from spotipy.oauth2 import SpotifyOAuth
 import os
 from dotenv import load_dotenv
 from spotipy_helpers import spotipy_helpers as sp_helpers
@@ -38,14 +38,14 @@ def get_album_details(sp):
     return albums
 
 def main():
-
-    auth_manager = SpotifyClientCredentials(
-        client_id=os.getenv("SPOTIPY_CLIENT_ID"),
-        client_secret=os.getenv("SPOTIPY_CLIENT_SECRET")
-    )
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
+            client_id=os.getenv("CLIENT_ID"),
+            client_secret=os.getenv("CLIENT_SECRET"),
+            redirect_uri=os.getenv("CLIENT_REDIRECT_URI"),
+            scope=os.getenv("SCOPE")
+            )
+        )
     
-    sp = spotipy.Spotify(auth_manager=auth_manager)
-
     albums = get_album_details(sp)
     
     # Post MVP, this function should display the data in a couple of different ways in a couple of different places. notably, An e-ink display with the info for what albums are loaded, a higher-res display to show the artwork itself.
