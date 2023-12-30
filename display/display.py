@@ -55,8 +55,16 @@ def display_loading():
     epd.send_data(0x17)
     time.sleep(2)
     
-    Himage = Image.open(os.path.join(picdir, 'img.bmp'))
+    font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
+    font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
+    font30 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 40)
+    
+    Himage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+    draw = ImageDraw.Draw(Himage)
+
+    draw.text((10, 10), get_loading_wording(), font = font24, fill = 0, align = "center")
+
     epd.display(epd.getbuffer(Himage))
     epd.lut_GC()
     epd.refresh()
-    time.sleep(20)
+    time.sleep(2)
