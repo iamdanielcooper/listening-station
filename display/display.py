@@ -33,7 +33,7 @@ def display_album_data(albums):
 
     for index, album in enumerate(albums):
         height = epd.width / 5
-        draw.text((30, height * index), display_formatted_album_information(index, album), font = font24, fill = 0, align = "center")
+        draw.text((10, height * index), display_formatted_album_information(index, album), font = font24, fill = 0, align = "center")
         draw.line((0, height * index, epd.height, height * index), fill = 0)
 
 
